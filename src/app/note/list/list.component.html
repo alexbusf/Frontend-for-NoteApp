@@ -1,0 +1,29 @@
+<div class="col-md-8">
+    <div class="col-md-12">
+        <h4 class="mx-auto my-2" style="width: 200px;">Note list</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                    <th scope="col" style="min-width: 150px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let note of notes">
+                    <th scope="row">{{ note.id }}</th>
+                    <td><p>{{ note.title }}</p></td>
+                    <td>{{ note.body }}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning" routerLink="/note/{{note.id}}">Edit</button>
+                        <button type="button" class="btn btn-danger mx-2" (click)="deleteBook(note.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
